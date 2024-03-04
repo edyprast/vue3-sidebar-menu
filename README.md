@@ -1,6 +1,8 @@
-# Vue 3 + Vite
+# Vue 3 + Vite +Bootstrap 5
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Kode ini disusun dengan menggunakan Vite Vue 3 dan Bootstrap 5
+
+Berisi template untuk menyusun dashboard admin dengan Vue 3 dan Bootstrap 5
 
 ## Recommended IDE Setup
 
