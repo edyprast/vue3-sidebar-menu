@@ -197,6 +197,16 @@ body {
 
 }
 
+.content main .card{
+    border-radius: 10px;
+}
+
+.content .dropdown .dropdown-menu a:hover{
+    background-color: var(--dark-grey);
+    color: white;
+   
+}
+
 #sidebar {
     width: 70px;
     min-width: 70px;

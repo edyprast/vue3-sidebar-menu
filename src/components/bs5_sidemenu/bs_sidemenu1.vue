@@ -62,7 +62,7 @@ export default {
         </li>
         <li class="sidebar-item">
           <a aria-controls="auth" aria-expanded="false" class="sidebar-link collapsed has-dropdown"
-             data-bs-target="#auth" data-bs-toggle="collapse" href="#">
+            data-bs-target="#auth" data-bs-toggle="collapse" href="#">
             <i class="lni lni-protection"></i>
             <span>Auth</span>
           </a>
@@ -77,14 +77,14 @@ export default {
         </li>
         <li class="sidebar-item">
           <a aria-controls="multi" aria-expanded="false" class="sidebar-link collapsed has-dropdown"
-             data-bs-target="#multi" data-bs-toggle="collapse" href="#">
+            data-bs-target="#multi" data-bs-toggle="collapse" href="#">
             <i class="lni lni-layout"></i>
             <span>Multi Level</span>
           </a>
           <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
             <li class="sidebar-item">
               <a aria-controls="multi-two" aria-expanded="false" class="sidebar-link collapsed"
-                 data-bs-target="#multi-two" data-bs-toggle="collapse" href="#">
+                data-bs-target="#multi-two" data-bs-toggle="collapse" href="#">
                 Two Links
               </a>
               <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
@@ -125,7 +125,7 @@ export default {
           <div class="form-input">
             <input placeholder="Search..." type="search">
             <button ref="searchBtnIcon" class="search-btn" type="submit"><i ref="searchBtnIcon"
-                                                                            class='bx bx-search'></i></button>
+                class='bx bx-search'></i></button>
           </div>
         </form>
         <input id="theme-toggle" v-model="isDarkMode" hidden type="checkbox" @change="toggleTheme">
@@ -134,9 +134,19 @@ export default {
           <i class='bx bx-bell'></i>
           <span class="count">12</span>
         </a>
-        <a class="profile" href="#">
+        <!-- <a class="profile" href="#">
           <img src="../../assets/images/logo.png">
-        </a>
+        </a> -->
+        <div class="dropdown">
+          <div class="profile dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../../assets/images/logo.png">
+          </div>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#"><i class="lni lni-swift"></i> <span class="ms-2">Action</span></a></li>
+            <li><a class="dropdown-item" href="#"><i class="lni lni-t-shirt"></i> <span class="ms-2">Another action</span></a></li>
+            <li><a class="dropdown-item" href="#"><i class="lni lni-sun"></i><span class="ms-2">Something else here</span></a></li>
+          </ul>
+        </div>
       </nav>
       <div class="breadcrumbs mt-4 ps-4">
         <ol class="breadcrumb">
@@ -146,6 +156,7 @@ export default {
         </ol>
       </div>
       <main class="mt-2 ps-3 pe-3">
+
         <div class="row">
           <div class="col">
             <div class="card mt-2">
