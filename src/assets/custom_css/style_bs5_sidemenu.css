@@ -277,7 +277,6 @@ body {
 
 .sidebar-nav {
     padding: 1rem 0;
-
     flex: 1 1 auto;
 }
 
@@ -324,6 +323,7 @@ a.sidebar-link:hover {
     color: white;
 }
 
+
 #sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
     display: block;
     max-height: 15em;
@@ -332,6 +332,12 @@ a.sidebar-link:hover {
     /*background-color: #191c1f;*/
     /*color: red;*/
 }
+
+#sidebar:not(.expand) .sidebar-item .has-dropdown+.sidebar-dropdown .active a {
+   background-color: #FBC02D;
+    color: #191c1f;
+}
+
 
 #sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
     border: solid;
@@ -352,3 +358,31 @@ a.sidebar-link:hover {
 }
 
 
+#sidebar .sidebar-nav li.active{
+    background: var(--grey);
+    position: relative;
+}
+
+/* #sidebar .sidebar-nav li.active::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--grey);
+    z-index: -1;
+}
+
+#sidebar .sidebar-nav li.active::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--grey);
+    z-index: -1;
+} */

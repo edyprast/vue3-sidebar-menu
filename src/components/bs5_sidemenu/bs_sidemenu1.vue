@@ -3,6 +3,8 @@ export default {
   data() {
     return {
       isSidebarExpanded: true,
+      sideLinks: null,
+
     };
   },
   methods: {
@@ -13,6 +15,7 @@ export default {
       const sideBar = this.$refs.sideBar;
       const searchBtnIcon = this.$refs.searchBtnIcon;
       const searchForm = this.$refs.searchForm;
+
 
       if (window.innerWidth < 768) {
         // sideBar.classList.add('close');
@@ -28,9 +31,32 @@ export default {
         this.isSidebarExpanded = true;
       }
     },
+
+    // activateLink() {
+    //   let linkactive = document.querySelectorAll('#sidebar .sidebar-nav .sidebar-item.active');
+    //   console.log(linkactive[0])
+    //   linkactive[0].classList.remove('active');
+
+    // },
   },
   mounted() {
     window.addEventListener('resize', this.handleWindowResize);
+
+    this.sideLinks = document.querySelectorAll('#sidebar .sidebar-nav li a:not(.logout) ');
+    console.log(this.sideLinks)
+
+    this.sideLinks.forEach(item => {
+      const li = item.parentElement;
+      item.addEventListener('click', () => {
+        this.sideLinks.forEach(i => {
+          i.parentElement.classList.remove('active');
+        })
+        li.classList.add('active');
+      })
+    });
+
+
+
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.handleWindowResize);
@@ -48,7 +74,7 @@ export default {
         </a>
       </div>
       <ul class="sidebar-nav">
-        <li class="sidebar-item">
+        <li class="sidebar-item active">
           <a class="sidebar-link" href="#">
             <i class="lni lni-user"></i>
             <span>Profile</span>
@@ -142,9 +168,12 @@ export default {
             <img src="../../assets/images/logo.png">
           </div>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#"><i class="lni lni-swift"></i> <span class="ms-2">Action</span></a></li>
-            <li><a class="dropdown-item" href="#"><i class="lni lni-t-shirt"></i> <span class="ms-2">Another action</span></a></li>
-            <li><a class="dropdown-item" href="#"><i class="lni lni-sun"></i><span class="ms-2">Something else here</span></a></li>
+            <li><a class="dropdown-item" href="#"><i class="lni lni-swift"></i> <span class="ms-2">Action</span></a>
+            </li>
+            <li><a class="dropdown-item" href="#"><i class="lni lni-t-shirt"></i> <span class="ms-2">Another
+                  action</span></a></li>
+            <li><a class="dropdown-item" href="#"><i class="lni lni-sun"></i><span class="ms-2">Something else
+                  here</span></a></li>
           </ul>
         </div>
       </nav>
